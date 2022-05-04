@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="D:\hangman\styles\style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hangman</title>
+  </head>
+  <body onkeyup="pressedLetter(event)">
+    <script type="text/javascript" src="D:\hangman\scripts\script.js"></script>
+    <h1>Welcome to the Hangman game</h1>
+    <div class="inputPlace">
+      <input type="text" id="enteredWord" placeholder="Please enter your word!">
+      <button type="button" id="subButton" onclick="addWordLetters()">Submit</button>
+    </div>
+    <div class="guessingPlace">
+      <ul id="lettersPlace"></ul><br>
+    </div>
+    <div>
+      <p id="incorectGuess">Incorect: </p>
+    </div>
+    <div>
+      <p>Lifes:</p>
+      <p id="lifes"></p>
+    </div>
+  </body>
+</html>
