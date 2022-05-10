@@ -45,7 +45,7 @@ function pressedLetter(event) {
       if (check == true) {
         for (i = 1; i < input.length - 1; ++i) {
           if (pressedKey == input[i]) {
-						++guessedLetters;
+            ++guessedLetters;
             wordToGuess[i] = pressedKey;
             document.getElementById("lettersPlace").innerHTML = wordToGuess.join(' ');
           }
@@ -65,7 +65,7 @@ function pressedLetter(event) {
       let resetBtn = "<button id='resetBtn' onclick='resetGame()'>Play again!</button>";
       document.getElementById("resetButton").innerHTML = resetBtn;
     }
-		if (guessedLetters === letterToGuess) {
+    if (guessedLetters === letterToGuess) {
       document.getElementById("playZone").remove();
       document.getElementById("guessingPlace").remove();
       document.getElementById("displayResult").innerHTML = "GAME WON!";
