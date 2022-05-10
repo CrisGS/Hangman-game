@@ -13,15 +13,22 @@
       <input type="text" id="enteredWord" placeholder="Please enter your word!">
       <button type="button" id="subButton" onclick="addWordLetters()">Submit</button>
     </div>
-    <div class="guessingPlace">
+    <div id="guessingPlace">
       <ul id="lettersPlace"></ul><br>
     </div>
-    <div>
-      <p id="incorectGuess">Incorect: </p>
+    <div id="playZone">
+      <p id="allTriedLetters"><strong>All tried letters: </strong> </p>
+      <div>
+        <p id="incorectGuess"><strong>Incorect: </strong></p>
+      </div>
+      <div id="lifesPlace">
+        <p><strong>Lifes: </strong></p>
+        <p id="lifes"></p>
+      </div>
     </div>
-    <div>
-      <p>Lifes:</p>
-      <p id="lifes"></p>
+    <div id="displayResult">
+    </div>
+    <div id="resetButton">
     </div>
   </body>
 </html>
