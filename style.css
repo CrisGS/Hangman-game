@@ -3,58 +3,87 @@
   display: inline;
 }
 
-.hidenLetter {
-  display: inline;
+#playZone {
+  display: block;
+  margin-top: 8%;
+  font-size: large;
 }
 
-.buttonsPlace {
-  display: table;
+#guessingPlace {
   position: absolute;
-  left: 50%;
-  top: 40%;
+  left: 45%;
+  top: 32%;
   transform: translate(-50%, -0);
+  font-size: xx-large;
+}
+
+#displayResult {
+  display: block;
+  margin-top: 12%;
+  margin-left: 30%;
+  font-size: 100px;
 }
 
 h1 {
   text-align: center;
-  font-family: cursive;
 }
 
 .inputPlace {
   position: absolute;
   left: 50%;
-  top: 15%;
+  top: 17%;
   transform: translate(-50%, -0);
+  font-family: cursive;
 }
 
 body {
-  background-color: cadetblue;
+  background-image: url("https://hdwallsource.com/img/2015/6/old-notebook-paper-wallpaper-45973-47255-hd-wallpapers.jpg");
+  background-repeat: no-repeat;
+  background-size: fill;
+  font-family: cursive;
 }
 
 #enteredWord {
-  font-family: cursive;
   border-radius: 20px;
   text-align: center;
   font-size: large;
+  font-family: cursive;
 }
 
 #subButton {
-  font-family: cursive;
   border-radius: 20px;
   font-size: large;
-}
-
-.guessingPlace {
-  display: inline-block;
-  margin-top: 7%;
-  margin-left: 42%;
-}
-
-.toggleButton {
-  margin-top: 15%;
-}
-
-button {
   font-family: cursive;
-  border-radius: 10px;
+}
+
+#lifesPlace {
+  display: block;
+  margin-top: 2.1%;
+}
+
+#lifes {
+  position: fixed;
+  top: 38%;
+  left: 5%;
+  font-size: x-large;
+  color: red;
+}
+
+#incorectGuess {
+  display: block;
+  margin-top: 2%;
+}
+
+#resetButton {
+  display: block;
+  margin-left: 44%;
+  margin-top: 5%;
+}
+
+#resetBtn {
+  font-family: cursive;
+  border-radius: 20px;
+  max-width: fit-content;
+  max-height: fit-content;
+  font-size: xx-large;
 }
