@@ -2,6 +2,8 @@ let guessedLetters = 0;
 let lifes = 6;
 const wordToGuess = [];
 const triedLetters = [];
+let incorrectCount = 0;
+const bodyParts = document.getElementsByClassName('body-part');
 
 
 
@@ -53,11 +55,15 @@ function pressedLetter(event) {
       } else if (lifes > 0) {
         document.getElementById("incorectGuess").appendChild(document.createTextNode(pressedKey + " "));
         document.getElementById("lifes").innerHTML = --lifes;
+				bodyParts[incorrectCount].style.display = 'block';
+				++incorrectCount;
       }
     }
     let div = document.getElementById("displayResult");
     let letterToGuess = input.length - 2;
     if (lifes == 0) {
+      d3.selectAll("line").remove();
+      d3.select("circle").remove();
       document.getElementById("playZone").remove();
       document.getElementById("guessingPlace").remove();
       document.getElementById("displayResult").innerHTML = "GAME OVER!";
@@ -66,6 +72,7 @@ function pressedLetter(event) {
       document.getElementById("resetButton").innerHTML = resetBtn;
     }
     if (guessedLetters === letterToGuess) {
+      d3.selectAll("line").remove();
       document.getElementById("playZone").remove();
       document.getElementById("guessingPlace").remove();
       document.getElementById("displayResult").innerHTML = "GAME WON!";
