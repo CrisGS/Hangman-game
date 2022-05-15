@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="D:\hangman\styles\style.css">
+    <link rel="stylesheet" type="text/css" href="D:\My projects\hangman\styles\style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src = "https://d3js.org/d3.v4.min.js"></script>
     <title>Hangman</title>
   </head>
   <body onkeyup="pressedLetter(event)">
-    <script type="text/javascript" src="D:\hangman\scripts\script.js"></script>
+    <script type="text/javascript" src="D:\My projects\hangman\scripts\script.js"></script>
     <h1>Welcome to the Hangman game</h1>
     <div class="inputPlace">
       <input type="text" id="enteredWord" placeholder="Please enter your word!">
@@ -29,6 +30,29 @@
     <div id="displayResult">
     </div>
     <div id="resetButton">
+    </div>
+    <div id="game-box">
+      <svg class="figure">
+        <!-- Stand -->
+        <line x1="25%" y1="5%" x2="65%" y2="5%" />
+        <line x1="65%" y1="5%" x2="65%" y2="20%" />
+        <line x1="25%" y1="5%" x2="25%" y2="95%" />
+        <line x1="5%" y1="95%" x2="45%" y2="95%" />
+
+        <!-- Head -->
+        <circle r="10%" cx="65%" cy="30%" class="body-part" />
+
+        <!-- Body -->
+        <line x1="65%" y1="40%" x2="65%" y2="60%" class="body-part" />
+
+        <!-- Arms -->
+        <line x1="50%" y1="40%" x2="65%" y2="50%" class="body-part" />
+        <line x1="80%" y1="40%" x2="65%" y2="50%" class="body-part" />
+
+        <!-- Legs -->
+        <line x1="65%" y1="60%" x2="80%" y2="70%" class="body-part" />
+        <line x1="65%" y1="60%" x2="50%" y2="70%" class="body-part" />
+      </svg>
     </div>
   </body>
 </html>
