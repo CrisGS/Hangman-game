@@ -55,8 +55,8 @@ function pressedLetter(event) {
       } else if (lifes > 0) {
         document.getElementById("incorectGuess").appendChild(document.createTextNode(pressedKey + " "));
         document.getElementById("lifes").innerHTML = --lifes;
-				bodyParts[incorrectCount].style.display = 'block';
-				++incorrectCount;
+        bodyParts[incorrectCount].style.display = 'block';
+        ++incorrectCount;
       }
     }
     let div = document.getElementById("displayResult");
