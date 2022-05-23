@@ -70,6 +70,7 @@ function pressedLetter(event) {
       div.style.color = "red";
       let resetBtn = "<button id='resetBtn' onclick='resetGame()'>Play again!</button>";
       document.getElementById("resetButton").innerHTML = resetBtn;
+      alert("The word was: " + document.getElementById("enteredWord").value);
     }
     if (guessedLetters === letterToGuess) {
       d3.selectAll("line").remove();
