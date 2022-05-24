@@ -1,10 +1,11 @@
 let guessedLetters = 0;
 let lifes = 6;
 const wordToGuess = [];
+const allTriedLetters = [];
 const triedLetters = [];
 let incorrectCount = 0;
 const bodyParts = document.getElementsByClassName('body-part');
-
+let resetBtn = "<button id='resetBtn' onclick='resetGame()'>Play again!</button>";
 
 
 function addWordLetters() {
@@ -12,7 +13,7 @@ function addWordLetters() {
   let wordLength = word.length;
   let onlyLetters = /^[A-Za-z]+$/;
   if (onlyLetters.test(document.getElementById("enteredWord").value)) {
-    if (wordLength >= 4) {
+    if (wordLength >= 5) {
       document.getElementById("lifes").innerHTML = lifes;
       let line = "__";
       for (let i = 1; i < wordLength - 1; ++i) {
@@ -22,12 +23,14 @@ function addWordLetters() {
       wordToGuess[wordLength - 1] = word[wordLength - 1];
       document.getElementById("lettersPlace").innerHTML = wordToGuess.join(' ');
     } else {
-      alert("Please enter a word consisting of 6 or more letters.");
-      location.reload();
+      document.getElementById("lettersPlace").innerHTML = "Please enter a word consisting of 5 or more letters."
+      resetBtn = "<button id='resetBtn' onclick='resetGame()'>Play again!</button>";
+      document.getElementById("resetButton").innerHTML = resetBtn;
     }
   } else {
-    alert("The word entered must contain only letters!");
-    location.reload();
+    document.getElementById("lettersPlace").innerHTML = "The word entered must contain only letters!";
+    resetBtn = "<button id='resetBtn' onclick='resetGame()'>Play again!</button>";
+    document.getElementById("resetButton").innerHTML = resetBtn;
   }
   document.getElementById("subButton").disabled = true;
 }
@@ -39,11 +42,13 @@ function pressedLetter(event) {
   let input = document.getElementById("enteredWord").value;
   let check = input.includes(pressedKey);
   if (event.keyCode >= 65 && event.keyCode <= 90 && submitBtn == 1) {
-    document.getElementById("allTriedLetters").appendChild(document.createTextNode(pressedKey + " "));
-    if (triedLetters.includes(pressedKey)) {
-      alert("You have already clicked on this letter. Try another one!");
+    if (triedLetters.includes(pressedKey) || allTriedLetters.includes(pressedKey)) {
+      document.getElementById("header").innerHTML = "Already pressed before. Please, try another one!";
     } else {
+      document.getElementById("allTriedLetters").appendChild(document.createTextNode(pressedKey + " "));
+      document.getElementById("header").innerHTML = "Welcome to the Hangman game";
       triedLetters.push(pressedKey);
+      allTriedLetters.push(pressedKey);
       if (check == true) {
         for (i = 1; i < input.length - 1; ++i) {
           if (pressedKey == input[i]) {
@@ -68,17 +73,18 @@ function pressedLetter(event) {
       document.getElementById("guessingPlace").remove();
       document.getElementById("displayResult").innerHTML = "GAME OVER!";
       div.style.color = "red";
-      let resetBtn = "<button id='resetBtn' onclick='resetGame()'>Play again!</button>";
+      resetBtn = "<button id='resetBtn' onclick='resetGame()'>Play again!</button>";
       document.getElementById("resetButton").innerHTML = resetBtn;
-      alert("The word was: " + document.getElementById("enteredWord").value);
+      document.getElementById("header").innerHTML = "The word was: " + document.getElementById("enteredWord").value;
     }
     if (guessedLetters === letterToGuess) {
       d3.selectAll("line").remove();
+      d3.select("circle").remove();
       document.getElementById("playZone").remove();
       document.getElementById("guessingPlace").remove();
       document.getElementById("displayResult").innerHTML = "GAME WON!";
       div.style.color = "green";
-      let resetBtn = "<button id='resetBtn' onclick='resetGame()'>Play again!</button>";
+      resetBtn = "<button id='resetBtn' onclick='resetGame()'>Play again!</button>";
       document.getElementById("resetButton").innerHTML = resetBtn;
     }
   }
