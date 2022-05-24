@@ -75,15 +75,15 @@ body {
 }
 
 #resetButton {
-  display: block;
-  margin-left: 85%;
-  margin-top: 15%;
+  position: fixed;
+  top: 85%;
+  right: 5%;
 }
 
 #resetBtn {
   font-family: cursive;
   border-radius: 20px;
-  max-width: fit-content;
+  max-width: max-content;
   max-height: fit-content;
   font-size: xx-large;
 }
