@@ -10,3 +10,5 @@ Find the word by selecting a letter each time. You win if you find the word in c
 - Indicate if same letter is entered more than once
 - Show a message when won or lost
 - Reset game button
+
+Here you can play the game: 
