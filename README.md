@@ -11,4 +11,4 @@ Find the word by selecting a letter each time. You win if you find the word in c
 - Show a message when won or lost
 - Reset game button
 
-Here you can play the game: 
+Here you can play the game: https://hangman-crisgs.netlify.app/
